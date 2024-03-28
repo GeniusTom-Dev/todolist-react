@@ -39,10 +39,10 @@ function Todo(props) {
 
     return (
         <tr className="border-b border-gray-600">
-            <td scope="row" className={`px-6 py-4 font-medium whitespace-wrap ${props.data.checked ? "line-through" : ""} ${props.data.date === new Date().toISOString().split('T')[0] ? "text-red-600" : "text-white"}`}>
+            <td scope="row" className={`px-6 py-4 font-medium whitespace-wrap ${props.data.checked ? "opacity-50" : ""} ${props.data.date === new Date().toISOString().split('T')[0] ? "text-red-600" : "text-white"}`}>
                 <input type={"text"} onBlur={changeTitle} disabled={true} ref={inputTitle} defaultValue={props.data.name} className={`bg-transparent`}/>
             </td>
-            <td className={`px-6 py-4 ${props.data.date === new Date().toISOString().split('T')[0] ? "text-red-600" : "text-white"}`}>
+            <td className={`px-6 py-4 ${props.data.checked ? "opacity-50" : ""} ${props.data.date === new Date().toISOString().split('T')[0] ? "text-red-600" : "text-white"}`}>
                 {props.data.date}
             </td>
             <td className={"px-6 py-4 flex justify-center space-x-6"}>
